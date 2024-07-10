@@ -1,0 +1,23 @@
+name: CICDBSPILLAJO
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Print deployment message
+      run: echo "Deploying to GitHub Pages"
+
+    - name: Push changes back to GitHub
+      uses: ad-m/github-push-action@master
+      
+
